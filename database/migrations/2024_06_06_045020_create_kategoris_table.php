@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTbstocksTable extends Migration
+class CreateKategorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateTbstocksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbstocks', function (Blueprint $table) {
-            $table->id();
+        Schema::create('kategoris', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama');
+            $table->string('foto');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateTbstocksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbstocks');
+        Schema::dropIfExists('kategoris');
     }
 }
